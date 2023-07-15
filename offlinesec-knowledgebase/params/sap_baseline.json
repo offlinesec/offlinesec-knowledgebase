@@ -1,0 +1,1178 @@
+{
+	"standard_name": "SAP Security Baseline",
+	"standard_id": 1,
+	"standard_descr": "Security Recommendations by SAP. Version 2.3",
+	"standard_url": "",
+	"standard_checks_list": [
+		{
+			"param_name": "rec/client",
+			"descr": "2.2.1.1.1",
+			"url": "1106605",
+			"risk_level": 2,
+			"group": "Security Hardening",
+			"rules_list": [
+				{
+					"not_value1": "OFF" 
+				}
+			]
+		},
+		{
+			"param_name": "login/show_detailed_errors",
+			"descr": "2.2.1.2.1",
+			"url": "1823687",
+			"risk_level": 2,
+			"group": "Information Disclosure",
+			"rules_list": [
+				{
+					"value": "0" 
+				}
+			]
+		},
+		{
+			"title": "",
+			"param_name": "service/protectedwebmethods",
+			"descr": "2.2.1.2.2",
+			"url": "2559588",
+			"risk_level": 2,
+			"group": "Information Disclosure",
+			"rules_list": [
+				{
+					"value1": "SDEFAULT",
+					"value2": "ALL" 
+				}
+			]
+		},
+		{
+			"param_name": "is/http/show_server_header",
+			"descr": "2.2.1.2.3",
+			"url": "1616535",
+			"risk_level": 2,
+			"group": "Information Disclosure",
+			"rules_list": [
+				{
+					"value1": "FALSE",
+					"value2": "0" 
+				}
+			]
+		},
+		{
+			"param_name": "is/http/show_detailed_errors",
+			"descr": "2.2.1.2.3",
+			"url": "2206951",
+			"risk_level": 2,
+			"group": "Information Disclosure",
+			"rules_list": [
+				{
+					"value1": "FALSE",
+					"value2": 0
+				}
+
+			]
+		},
+		{
+			"param_name": "is/smtp/show_server_header",
+			"descr": "2.2.1.2.3",
+			"url": "",
+			"risk_level": 2,
+			"group": "Information Disclosure",
+			"rules_list": [
+				{
+					"value1": "FALSE",
+					"value2": 0
+				}
+			]
+		},
+		{
+			"param_name": "wdisp/permission_table",
+			"descr": "2.2.1.2.3",
+			"url": "",
+			"risk_level": 2,
+			"group": "Information Disclosure",
+			"rules_list": [
+				{
+					"not_empty": true
+				}
+			]
+		},
+		{
+			"param_name": "icm/http/auth_*",
+			"descr": "2.2.1.2.3",
+			"url": "2390858",
+			"risk_level": 2,
+			"group": "Information Disclosure",
+			"rules_list": [
+				{
+					"not_empty": true
+				}
+			]
+		},
+		{
+			"param_name": "icm/http/admin_*",
+			"descr": "2.2.1.2.3",
+			"url": "2260323",
+			"risk_level": 2,
+			"group": "Information Disclosure",
+			"rules_list": [
+				{
+					"contain1": "ALLOWPUB=FALSE",
+					"contain2": "CLIENTHOST"
+				}
+			]
+		},
+		{
+			"param_name": "icm/http/error_templ_path",
+			"descr": "2.2.1.2.3",
+			"url": "2260323",
+			"risk_level": 2,
+			"group": "Information Disclosure",
+			"rules_list": [
+				{
+					"contain1": "/usr/sap/",
+					"contain2": "/data/icmerror"
+				}
+			]
+		},
+		{
+			"title": "",
+			"param_name": "rdisp/trace_hide_sec_data",
+			"descr": "2.2.1.2.3",
+			"url": "2012562",
+			"risk_level": 2,
+			"group": "Information Disclosure",
+			"rules_list": [
+				{
+					"value": "ON"
+				}
+			]
+		},
+		{
+			"title": "",
+			"param_name": "icm/trace_secured_data",
+			"descr": "2.2.1.2.3",
+			"url": "634262",
+			"risk_level": 2,
+			"group": "Information Disclosure",
+			"rules_list": [
+				{
+					"value1": "FALSE",
+					"value2": 0
+				}
+			]
+		},
+		{
+			"param_name": "icm/accept_forwarded_cert_via_http",
+			"descr": "2.2.1.2.3",
+			"url": "2656696",
+			"risk_level": 2,
+			"group": "Information Disclosure",
+			"rules_list": [
+				{
+					"value1": "FALSE",
+					"value2": 0
+				}
+			]
+		},
+		{
+			"param_name": "icm/trusted_reverse_proxy_*",
+			"descr": "2.2.1.2.3",
+			"url": "2052899",
+			"risk_level": 2,
+			"group": "Information Disclosure",
+			"rules_list": [
+				{
+					"not_contain1": "SUBJECT=*",
+					"not_contain2": "ISSUER=*"
+				}
+			]
+		},
+		{
+			"param_name": "abap/path_normalization",
+			"descr": "2.2.1.3.1",
+			"url": "2551541",
+			"risk_level": 2,
+			"group": "Directory Traversal Protection",
+			"rules_list": [
+				{
+					"not_value": "OFF"
+				}
+			]
+		},
+		{
+			"param_name": "rdisp/msserv_internal",
+			"descr": "2.2.1.4.1",
+			"url": "821875",
+			"risk_level": 2,
+			"group": "Message Server Security",
+			"rules_list": [
+				{
+					"value": 0
+				}
+			]
+		},
+		{
+			"param_name": "ms/monitor",
+			"descr": "2.2.1.4.1",
+			"url": "821875",
+			"risk_level": 2,
+			"group": "Message Server Security",
+			"rules_list": [
+				{
+					"value": 0
+				}
+			]
+		},
+		{
+			"param_name": "ms/admin_port",
+			"descr": "2.2.1.4.1",
+			"url": "821875",
+			"risk_level": 2,
+			"group": "Message Server Security",
+			"rules_list": [
+				{
+					"value": 0
+				}
+			]
+		},
+		{
+			"param_name": "ms/acl_info",
+			"descr": "2.2.1.4.1",
+			"url": "821875",
+			"risk_level": 2,
+			"group": "Message Server Security",
+			"rules_list": [
+				{
+					"not_empty": true
+				}
+			]
+		},
+		{
+			"param_name": "system/secure_communication",
+			"descr": "2.3.2.1.1",
+			"url": "2040644",
+			"risk_level": 2,
+			"group": "Encryption of network connections",
+			"rules_list": [
+				{
+					"value": "ON"
+				}
+			]
+		},
+		{
+			"param_name": "auth/rfc_authority_check",
+			"descr": "2.2.1.5.1",
+			"url": "931252",
+			"risk_level": 2,
+			"group": "Secure Network Configuration",
+			"rules_list": [
+				{
+					"value1": 1,
+					"value2": 6
+				}
+			]
+		},
+		{
+			"param_name": "rfc/callback_security_method",
+			"descr": "2.2.1.5.1",
+			"url": "2678501",
+			"risk_level": 2,
+			"group": "Secure Network Configuration",
+			"rules_list": [
+				{
+					"value": 3
+				}
+			]
+		},
+		{
+			"param_name": "rfc/selftrust",
+			"descr": "2.2.1.5.1",
+			"url": "2449757",
+			"risk_level": 2,
+			"group": "Secure Network Configuration",
+			"rules_list": [
+				{
+					"value": 0
+				}
+			]
+		},
+		{
+			"param_name": "ixml/dtd_restriction",
+			"descr": "2.2.1.5.1",
+			"url": "1712860",
+			"risk_level": 2,
+			"group": "Secure Network Configuration",
+			"rules_list": [
+				{
+					"value1": "expansion",
+					"value2": "prohibited"
+				}
+			]
+		},
+		{
+			"param_name": "login/disable_cpic",
+			"descr": "2.2.1.5.1",
+			"url": "",
+			"risk_level": 2,
+			"group": "Secure Network Configuration",
+			"rules_list": [
+				{
+					"value": 1
+				}
+			]
+		},
+		{
+			"param_name": "wdisp/add_xforwardedfor_header",
+			"descr": "2.2.1.5.1",
+			"url": "2788140",
+			"risk_level": 2,
+			"group": "Secure Network Configuration",
+			"rules_list": [
+				{
+					"value": "TRUE"
+				}
+			]
+		},
+		{
+			"param_name": "sapgui/nwbc_scripting",
+			"descr": "2.2.1.8.1",
+			"url": "1816392",
+			"risk_level": 1,
+			"group": "Scripting Protection",
+			"rules_list": [
+				{
+					"value": "FALSE"
+				}
+			]
+		},
+		{
+			"param_name": "sapgui/user_scripting",
+			"descr": "2.2.1.8.1",
+			"url": "2715519",
+			"risk_level": 1,
+			"group": "Scripting Protection",
+			"rules_list": [
+				{
+					"value": "FALSE"
+				}
+			]
+		},
+		{
+			"param_name": "sapgui/user_scripting_disable_recording",
+			"descr": "2.2.1.8.1",
+			"url": "2715519",
+			"risk_level": 1,
+			"group": "Scripting Protection",
+			"rules_list": [
+				{
+					"value": "TRUE"
+				}
+			]
+		},
+		{
+			"param_name": "sapgui/user_scripting_force_notification",
+			"descr": "2.2.1.8.1",
+			"url": "",
+			"risk_level": 1,
+			"group": "Scripting Protection",
+			"rules_list": [
+				{
+					"value": "TRUE"
+				}
+			]
+		},
+		{
+			"param_name": "sapgui/user_scripting_per_user",
+			"descr": "2.2.1.8.1",
+			"url": "983990",
+			"risk_level": 1,
+			"group": "Scripting Protection",
+			"rules_list": [
+				{
+					"value": "TRUE"
+				}
+			]
+		},
+		{
+			"param_name": "sapgui/user_scripting_set_readonly",
+			"descr": "2.2.1.8.1",
+			"url": "692245",
+			"risk_level": 1,
+			"group": "Scripting Protection",
+			"rules_list": [
+				{
+					"value": "TRUE"
+				}
+			]
+		},
+		{
+			"param_name": "dynp/checkskip1screen",
+			"descr": "2.2.1.11.1",
+			"url": "1399324",
+			"risk_level": 2,
+			"group": "User control of action",
+			"rules_list": [
+				{
+					"value": "ALL"
+				}
+			]
+		},
+		{
+			"param_name": "dynp/confirmskip1screen",
+			"descr": "2.2.1.11.1",
+			"url": "1955086",
+			"risk_level": 2,
+			"group": "User control of action",
+			"rules_list": [
+				{
+					"value": "ALL"
+				}
+			]
+		},
+		{
+			"param_name": "auth/check/calltransaction",
+			"descr": "2.2.1.11.1",
+			"url": "",
+			"risk_level": 2,
+			"group": "User control of action",
+			"rules_list": [
+				{
+					"value1": 2,
+					"value2": 3
+				}
+			]
+		},
+		{
+			"param_name": "auth/no_check_in_some_cases",
+			"descr": "2.2.1.11.1",
+			"url": "1723881",
+			"risk_level": 2,
+			"group": "User control of action",
+			"rules_list": [
+				{
+					"value": "Y"
+				}
+			]
+		},
+		{
+			"param_name": "auth/object_disabling_active",
+			"descr": "2.2.1.11.1",
+			"url": "2713544",
+			"risk_level": 2,
+			"group": "User control of action",
+			"rules_list": [
+				{
+					"value": "N"
+				}
+			]
+		},
+		{
+			"param_name": "rdisp/gui_auto_logout",
+			"descr": "2.2.1.11.1",
+			"url": "27320",
+			"risk_level": 2,
+			"group": "User control of action",
+			"rules_list": [
+				{
+					"max_value": 3600,
+					"not_value": 0
+				}
+			]
+		},
+		{
+			"param_name": "rdisp/vbdelete",
+			"descr": "2.2.1.11.1",
+			"url": "3220986",
+			"risk_level": 2,
+			"group": "User control of action",
+			"rules_list": [
+				{
+					"value": 0
+				},
+				{
+					"min_value": 400
+				}
+			]
+		},
+		{
+			"param_name": "login/no_automatic_user_sapstar",
+			"descr": "2.3.1.2.1",
+			"url": "68048",
+			"risk_level": 3,
+			"group": "Standard users",
+			"rules_list": [
+				{
+					"value": 1
+				}
+			]
+		},
+		{
+			"param_name": "snc/enable",
+			"descr": "2.3.2.1.1",
+			"url": "",
+			"risk_level": 2,
+			"group": "Encryption of network connections",
+			"rules_list": [
+				{
+					"value": 1
+				}
+			]
+		},
+		{
+			"param_name": "snc/data_protection/min",
+			"descr": "2.3.2.1.1",
+			"url": "",
+			"risk_level": 2,
+			"group": "Encryption of network connections",
+			"rules_list": [
+				{
+					"value": 3
+				}
+			]
+		},
+		{
+			"param_name": "snc/data_protection/max",
+			"descr": "2.3.2.1.1",
+			"url": "",
+			"risk_level": 2,
+			"group": "Encryption of network connections",
+			"rules_list": [
+				{
+					"value": 3
+				}
+			]
+		},
+		{
+			"param_name": "snc/data_protection/use",
+			"descr": "2.3.2.1.1",
+			"url": "",
+			"risk_level": 2,
+			"group": "Encryption of network connections",
+			"rules_list": [
+				{
+					"value1": 3,
+					"value2": 9
+				}
+			]
+		},
+		{
+			"param_name": "snc/accept_insecure_gui",
+			"descr": "2.3.2.1.1",
+			"url": "1690662",
+			"risk_level": 1,
+			"group": "Encryption of network connections",
+			"rules_list": [
+				{
+					"value1": 0,
+					"value2": "U"
+				}
+			]
+		},
+		{
+			"param_name": "snc/accept_insecure_rfc",
+			"descr": "2.3.2.1.1",
+			"url": "1690662",
+			"risk_level": 1,
+			"group": "Encryption of network connections",
+			"rules_list": [
+				{
+					"value1": 0,
+					"value2": "U"
+				}
+			]
+		},
+		{
+			"param_name": "snc/only_encrypted_gui",
+			"descr": "2.3.2.1.1",
+			"url": "1690662",
+			"risk_level": 1,
+			"group": "Encryption of network connections",
+			"rules_list": [
+				{
+					"value": 1
+				}
+			]
+		},
+		{
+			"param_name": "snc/only_encrypted_rfc",
+			"descr": "2.3.2.1.1",
+			"url": "1690662",
+			"risk_level": 1,
+			"group": "Encryption of network connections",
+			"rules_list": [
+				{
+					"value": 1
+				}
+			]
+		},
+		{
+			"param_name": "snc/log_unencrypted_rfc",
+			"descr": "2.3.2.1.1",
+			"url": "2122578",
+			"risk_level": 2,
+			"group": "Encryption of network connections",
+			"rules_list": [
+				{
+					"value": 2
+				}
+			]
+		},
+		{
+			"param_name": "ssl/ciphersuites",
+			"descr": "2.3.2.1.1",
+			"url": "510007",
+			"risk_level": 1,
+			"group": "Encryption of network connections",
+			"rules_list": [
+				{
+					"value": "135:PFS:HIGH::EC_P256:EC_HIGH"
+				}
+			]
+		},
+		{
+			"param_name": "ssl/client_ciphersuites",
+			"descr": "2.3.2.1.1",
+			"url": "510007",
+			"risk_level": 1,
+			"group": "Encryption of network connections",
+			"rules_list": [
+				{
+					"value": "150:PFS:HIGH::EC_P256:EC_HIGH"
+				}
+			]
+		},
+		{
+			"param_name": "icm/server_port_*",
+			"descr": "2.3.2.1.2",
+			"url": "",
+			"risk_level": 2,
+			"group": "Encryption of network connections",
+			"rules_list": [
+				{
+					"not_contain1": "PROT=HTTP,",
+					"not_contain2": "PROT=HTTP "
+				}
+			]
+		},
+		{
+			"param_name": "icm/http/admin_*",
+			"descr": "2.3.2.1.2",
+			"url": "",
+			"risk_level": 2,
+			"group": "Encryption of network connections",
+			"rules_list": [
+				{
+					"contain1": "PORT"
+				}
+			]
+		},
+		{
+			"param_name": "login/min_password_lng",
+			"descr": "2.3.2.2.1",
+			"url": "2467",
+			"risk_level": 3,
+			"group": "Password Policy",
+			"rules_list": [
+				{
+					"min_value": 8
+				}
+			]
+		},
+		{
+			"param_name": "login/password_max_idle_initial",
+			"descr": "2.3.2.2.1",
+			"url": "2467",
+			"risk_level": 3,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"min_value": 1,
+					"max_value": 14
+				}
+			]
+		},
+		{
+			"param_name": "login/password_expiration_time",
+			"descr": "2.3.2.2.1",
+			"url": "2467",
+			"risk_level": 3,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"min_value": 1,
+					"max_value": 183
+				}
+			]
+		},
+		{
+			"param_name": "login/password_downwards_compatibility",
+			"descr": "2.3.2.2.1",
+			"url": "2467",
+			"risk_level": 3,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"value": 0
+				}
+			]
+		},
+		{
+			"param_name": "login/password_compliance_to_current_policy",
+			"descr": "2.3.2.2.1",
+			"url": "2467",
+			"risk_level": 2,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"value": 1
+				}
+			]
+		},
+		{
+			"param_name": "icf/reject_expired_passwd",
+			"descr": "2.3.2.2.1",
+			"url": "1042274",
+			"risk_level": 2,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"value": 1
+				}
+			]
+		},
+		{
+			"param_name": "rfc/reject_expired_passwd",
+			"descr": "2.3.2.2.1",
+			"url": "454962",
+			"risk_level": 2,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"value": 1
+				}
+			]
+		},
+		{
+			"param_name": "login/min_password_digits",
+			"descr": "2.3.2.2.1",
+			"url": "2467",
+			"risk_level": 1,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"min_value": 1
+				}
+			]
+		},
+		{
+			"param_name": "login/min_password_letters",
+			"descr": "2.3.2.2.1",
+			"url": "2467",
+			"risk_level": 1,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"min_value": 1
+				}
+			]
+		},
+		{
+			"param_name": "login/min_password_lowercase",
+			"descr": "2.3.2.2.1",
+			"url": "2467",
+			"risk_level": 1,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"min_value": 1
+				}
+			]
+		},
+		{
+			"param_name": "login/min_password_uppercase",
+			"descr": "2.3.2.2.1",
+			"url": "2467",
+			"risk_level": 1,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"min_value": 1
+				}
+			]
+		},
+		{
+			"param_name": "login/min_password_specials",
+			"descr": "2.3.2.2.1",
+			"url": "2467",
+			"risk_level": 1,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"min_value": 1
+				}
+			]
+		},
+		{
+			"param_name": "login/min_password_diff",
+			"descr": "2.3.2.2.1",
+			"url": "2467",
+			"risk_level": 1,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"min_value": 3
+				}
+			]
+		},
+		{
+			"param_name": "login/disable_password_logon",
+			"descr": "2.3.2.2.1",
+			"url": "379081",
+			"risk_level": 1,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"not_empty": true
+				}
+			]
+		},
+		{
+			"param_name": "login/fails_to_user_lock",
+			"descr": "2.3.2.2.1",
+			"url": "862989",
+			"risk_level": 1,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"max_value": 5
+				}
+			]
+		},
+		{
+			"param_name": "login/failed_user_auto_unlock",
+			"descr": "2.3.2.2.1",
+			"url": "2467",
+			"risk_level": 1,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"value": 0
+				}
+			]
+		},
+		{
+			"param_name": "login/password_max_idle_productive",
+			"descr": "2.3.2.2.1",
+			"url": "862989",
+			"risk_level": 1,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"min_value": 1,
+					"max_value": 180
+				}
+			]
+		},
+		{
+			"param_name": "login/password_change_waittime",
+			"descr": "2.3.2.2.1",
+			"url": "862989",
+			"risk_level": 1,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"not_empty": true
+				}
+			]
+		},
+		{
+			"param_name": "login/password_change_for_sso",
+			"descr": "2.3.2.2.1",
+			"url": "441452",
+			"risk_level": 1,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"value": 1
+				}
+			]
+		},
+		{
+			"param_name": "login/password_history_size",
+			"descr": "2.3.2.2.1",
+			"url": "",
+			"risk_level": 1,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"min_value": 5
+				}
+			]
+		},
+		{
+			"param_name": "login/password_hash_algorithm",
+			"descr": "2.3.2.2.1",
+			"url": "862989",
+			"risk_level": 1,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"value": "encoding=RFC2307, algorithm=iSSHA-512, iterations=15000, saltsize=256"
+				}
+			]
+		},
+		{
+			"param_name": "login/password_logon_usergroup",
+			"descr": "2.3.2.2.1",
+			"url": "379081",
+			"risk_level": 1,
+			"group": "Password policy",
+			"rules_list": [
+				{
+					"not_empty": true
+				}
+			]
+		},
+		{
+			"param_name": "gw/sec_info",
+			"descr": "2.3.2.3.1",
+			"url": "1408081",
+			"risk_level": 3,
+			"group": "RFC Gateway Security",
+			"rules_list": [
+				{
+					"not_empty": true
+				}
+			]
+		},
+		{
+			"param_name": "gw/reg_info",
+			"descr": "2.3.2.3.1",
+			"url": "1408081",
+			"risk_level": 3,
+			"group": "RFC Gateway Security",
+			"rules_list": [
+				{
+					"not_empty": true
+				}
+			]
+		},
+		{
+			"param_name": "gw/reg_no_conn_info",
+			"descr": "2.3.2.3.1",
+			"url": "1480644",
+			"risk_level": 3,
+			"group": "RFC Gateway Security",
+			"rules_list": [
+				{
+					"value": 255
+				}
+			]
+		},
+		{
+			"param_name": "gw/acl_mode",
+			"descr": "2.3.2.2.1",
+			"url": "1480644",
+			"risk_level": 3,
+			"group": "RFC Gateway Security",
+			"rules_list": [
+				{
+					"value": 1
+				}
+			]
+		},
+		{
+			"param_name": "gw/monitor",
+			"descr": "2.3.2.3.1",
+			"url": "64016",
+			"risk_level": 3,
+			"group": "RFC Gateway Security",
+			"rules_list": [
+				{
+					"value": 1
+				}
+			]
+		},
+		{
+			"param_name": "gw/sim_mode",
+			"descr": "2.3.2.3.1",
+			"url": "",
+			"risk_level": 3,
+			"group": "RFC Gateway Security",
+			"rules_list": [
+				{
+					"value": 0
+				}
+			]
+		},
+		{
+			"param_name": "gw/rem_start",
+			"descr": "2.3.2.3.1",
+			"url": "",
+			"risk_level": 1,
+			"group": "RFC Gateway Security",
+			"rules_list": [
+				{
+					"value1": "DISABLED",
+					"value2": "SSH_SHELL"
+				}
+			]
+		}
+		,
+		{
+			"param_name": "login/ticket_only_by_https",
+			"descr": "2.3.2.4.1",
+			"url": "2068872",
+			"risk_level": 2,
+			"group": "Single Sign-On",
+			"rules_list": [
+				{
+					"value1": 1
+				}
+			]
+		},
+		{
+			"param_name": "login/ticket_only_to_host",
+			"descr": "2.3.2.4.1",
+			"url": "",
+			"risk_level": 2,
+			"group": "Single Sign-On",
+			"rules_list": [
+				{
+					"value1": 1
+				}
+			]
+		},
+		{
+			"param_name": "icf/set_httponly_flag_on_cookies",
+			"descr": "2.3.2.4.1",
+			"url": "",
+			"risk_level": 2,
+			"group": "Single Sign-On",
+			"rules_list": [
+				{
+					"not_value1": 1,
+					"not_value2": 3
+				}
+			]
+		},
+		{
+			"param_name": "rsau/enable",
+			"descr": "2.4.3.1.1",
+			"url": "2676384",
+			"risk_level": 2,
+			"group": "Audit Settings",
+			"rules_list": [
+				{
+					"value1": 1
+				}
+			]
+		},
+		{
+			"param_name": "rsau/integrity",
+			"descr": "2.4.3.1.1",
+			"url": "2676384",
+			"risk_level": 2,
+			"group": "Audit Settings",
+			"rules_list": [
+				{
+					"value1": 1
+				}
+			]
+		},
+		{
+			"param_name": "rsau/log_peer_address",
+			"descr": "2.4.3.1.1",
+			"url": "2190621",
+			"risk_level": 2,
+			"group": "Audit Settings",
+			"rules_list": [
+				{
+					"value": 1
+				}
+			]
+		},
+		{
+			"param_name": "rsau/selection_slots",
+			"descr": "2.4.3.1.1",
+			"url": "2676384",
+			"risk_level": 2,
+			"group": "Audit Settings",
+			"rules_list": [
+				{
+					"min_value": 10
+				}
+			]
+		},
+		{
+			"param_name": "rsau/user_selection",
+			"descr": "2.4.3.1.1",
+			"url": "2676384",
+			"risk_level": 2,
+			"group": "Audit Settings",
+			"rules_list": [
+				{
+					"value1": 1
+				}
+			]
+		},
+		{
+			"param_name": "icm/http/logging_0",
+			"descr": "2.4.3.1.1",
+			"url": "2926224",
+			"risk_level": 2,
+			"group": "Audit Settings",
+			"rules_list": [
+				{
+					"value": "PREFIX=/,LOGFILE=http_client_%y_%m.log,MAXFILES=2,MAXSIZEKB=50000,SWITCHTF=month, LOGFORMAT=%t %a %u1 \"%r\" %s %b %Lms %{Host}i %w1 %w2"
+				}
+			]
+		},
+		{
+			"param_name": "icm/http/logging_client_0",
+			"descr": "2.4.3.1.1",
+			"url": "2926224",
+			"risk_level": 2,
+			"group": "Audit Settings",
+			"rules_list": [
+				{
+					"value": "PREFIX=/,LOGFILE=http_client_%y_%m.log,MAXFILES=2,MAXSIZEKB=50000,S WITCHTF=month, LOGFORMAT=%t %a %u1 \"%r\" %s %b %Lms %{Host}i"
+				}
+			]
+		},
+		{
+			"param_name": "icm/security_log",
+			"descr": "2.4.3.1.1",
+			"url": "2926224",
+			"risk_level": 2,
+			"group": "Audit Settings",
+			"rules_list": [
+				{
+					"value1": "LOGFILE=dev_icm_sec_%y_%m,LEVEL=3,MAXFILES=2,MAXSIZEKB=50000,SWITCHTF=month"
+				}
+			]
+		},
+		{
+			"param_name": "ms/http/logging_0",
+			"descr": "2.4.3.1.1",
+			"url": "2926224",
+			"risk_level": 2,
+			"group": "Audit Settings",
+			"rules_list": [
+				{
+					"value1": "PREFIX=/,LOGFILE=$(DIR_LOGGING)/mshttp-%y-%m-%d.log%o,MAXFILES=7,MAXSIZEKB=10000,SWITCHTF=day,LOGFORMAT=%t %a %u %r %s %b %{Host}i"
+				}
+			]
+		},
+		{
+			"param_name": "ms/http_logging",
+			"descr": "2.4.3.1.1",
+			"url": "",
+			"risk_level": 2,
+			"group": "Audit Settings",
+			"rules_list": [
+				{
+					"value": 1
+				}
+			]
+		}
+	]
+}
