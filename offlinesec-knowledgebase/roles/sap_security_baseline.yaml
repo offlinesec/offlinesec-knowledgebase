@@ -1,0 +1,295 @@
+ruleset_id: 1
+ruleset_desc: "SAP Security Baseline"
+
+auth_fields:
+  - name: DICBERCLS_ALL
+    field: DICBERCLS
+    value: #*
+
+  - name: DICBERCLS_SS
+    field: DICBERCLS
+    value: SS
+
+  - name: DICBERCLS_SPWD
+    field: DICBERCLS
+    value: SPWD
+
+  - name: TCD_ALL
+    field: TCD
+    value: #*
+
+  - name: FILENAME_ALL
+    field: FILENAME
+    value: #*
+
+  - name: TCD_SE16
+    field: TCD
+    value: SE17
+
+  - name: TCD_SE16N
+    field: TCD
+    value: SE16N
+
+  - name: TCD_SE17
+    field: TCD
+    value: SE17
+
+  - name: SRV_NAME_ALL
+    field: SRV_NAME
+    value: #*
+
+  - name: TABLE_ALL
+    field: TABLE
+    value: #*
+
+  - name: TABLE_USR02
+    field: TABLE
+    value: USR02
+
+  - name: TABLE_USH02
+    field: TABLE
+    value: USH02
+
+  - name: TABLE_USRPWDHISTORY
+    field: TABLE
+    value: USRPWDHISTORY
+
+  - name: ACTVT_23
+    field: ACTVT
+    value: '23'
+
+  - name: ACTVT_16
+    field: ACTVT
+    value: '16'
+
+  - name: ACTVT_05
+    field: ACTVT
+    value: '05'
+
+  - name: CLASS_ALL
+    field: CLASS
+    value: #*
+
+  - name: ACTVT_03
+    field: ACTVT
+    value: '03'
+
+  - name: ACTVT_02
+    field: ACTVT
+    value: '02'
+
+  - name: ACTVT_01
+    field: ACTVT
+    value: '01'
+
+  - name: ACTVT_36
+    field: ACTVT
+    value: '36'
+
+  - name: S_TABLE_USR02
+    field: S_TABLE
+    value: USR02
+
+  - name: RFCDEST_ALL
+    field: RFCDEST
+    value: #*
+
+  - name: P_ACTION_SUBMIT
+    field: P_ACTION
+    value: SUBMIT
+
+  - name: P_ACTION_BTCSUBMIT
+    field: P_ACTION
+    value: BTCSUBMIT
+
+  - name: P_GROUP_ALL
+    field: P_GROUP
+    value: #*
+
+  - name: OBJTYPE_DEBUG
+    field: OBJTYPE
+    value: DEBUG
+
+  - name: OBJTYPE_FUGR
+    field: OBJTYPE
+    value: FUGR
+
+  - name: OBJTYPE_CLAS
+    field: OBJTYPE
+    value: CLAS
+
+  - name: AUTHOBJNAM_ALL
+    field: AUTHOBJNAM
+    value: #*
+
+  - name: OBJNAME_ALL
+    field: OBJNAME
+    value: #*
+
+  - name: SPOACTION_DISP
+    field: SPOACTION
+    value: DISP
+
+  - name: SPOAUTH_ALL
+    field: SPOAUTH
+    value: #*
+
+  - name: RFC_NAME_ALL
+    field: RFC_NAME
+    value: #*
+
+auth_objects:
+  - name: S_TABU_DIS_ALL_03
+    type: S_TABU_DIS
+    rule: DICBERCLS_ALL AND ACTVT_03
+
+  - name: S_TABU_DIS_ALL_02
+    type: S_TABU_DIS
+    rule: DICBERCLS_ALL AND ACTVT_02
+
+  - name: S_TABU_NAM_ALL_03
+    type: S_TABU_NAM
+    rule: TABLE_ALL AND ACTVT_03
+
+  - name: S_TABU_NAM_ALL_02
+    type: S_TABU_NAM
+    rule: TABLE_ALL AND ACTVT_02
+
+  - name: S_TCODE_ALL
+    type: S_TCODE
+    rule: TCD_ALL
+
+  - name: S_TCODE_READ_TABLE
+    type: S_TCODE
+    rule: TCD_SE16 OR TCD_SE16N OR TCD_SE17
+
+  - name: S_SERVICE_ALL_16
+    type: S_SERVICE
+    rule: SRV_NAME_ALL AND ACTVT_16
+
+  - name: S_START_ALL
+    type: S_START
+    rule: AUTHOBJNAM_ALL
+
+  - name: S_PROGRAM_ALL
+    type: S_PROGRAM
+    rule: P_GROUP_ALL AND (P_ACTION_SUBMIT OR P_ACTION_BTCSUBMIT)
+
+  - name: S_DEVELOP_DEBUG
+    type: S_DEVELOP
+    rule: OBJTYPE_DEBUG AND (ACTVT_01 OR ACTVT_02)
+
+  - name: S_SPO_ACT_DISP_ALL
+    type: S_SPO_ACT
+    rule: SPOACTION_DISP AND SPOAUTH_ALL
+
+  - name: S_RFC_ADM_ADM_ALL
+    type: S_RFC_ADM
+    rule: RFCDEST_ALL AND (ACTVT_01 OR ACTVT_02 OR ACTVT_36)
+
+  - name: S_DEVELOP_FUGR_EXEC_ALL
+    type: S_DEVELOP
+    rule: OBJTYPE_FUGR AND ACTVT_16 AND OBJNAME_ALL
+
+  - name: S_DEVELOP_CLAS_EXEC_ALL
+    type: S_DEVELOP
+    rule: OBJTYPE_CLAS AND ACTVT_16 AND OBJNAME_ALL
+
+  - name: S_USER_GRP_ALL_05
+    type: S_USER_GRP
+    rule: CLASS_ALL AND ACTVT_05
+
+  - name: S_TABU_DIS_SS_02
+    type: S_TABU_DIS
+    rule: ACTVT_02 and DICBERCLS_SS
+
+  - name: S_QUERY_23
+    type: S_QUERY
+    rule: ACTVT_23
+
+  - name: S_RFC_ALL
+    type: S_RFC
+    rule: RFC_NAME_ALL AND ACTVT_16
+
+  - name: S_TABU_DIS_HASH_TABLE_READ
+    type: S_TABU_DIS
+    rule: DICBERCLS_SPWD AND ACTVT_03
+
+  - name: S_TABU_NAM_HASH_TABLE_READ
+    type: S_TABU_NAM
+    rule: ACTVT_03 AND (TABLE_USR02 OR TABLE_USH02 OR TABLE_USRPWDHISTORY)
+
+auth_checks:
+  - name: CHANGE_OR_DISPLAY_ALL_TABLES
+    rule: S_TABU_DIS_ALL_03 OR S_TABU_DIS_ALL_02 OR S_TABU_NAM_ALL_03 OR S_TABU_NAM_ALL_02
+    risk_level: "3"
+    risk_desc: "Authorization to change or display all tables (2.3.3.1.1)"
+
+  - name: START_ALL_TRA_SERV_APPL
+    rule: S_TCODE_ALL OR S_SERVICE_ALL_16 OR S_START_ALL
+    risk_level: "3"
+    risk_desc: "Authorization to start all transactions, services and applications (2.3.3.1.1)"
+
+  - name: START_ALL_REPORTS
+    rule: S_PROGRAM_ALL
+    risk_level: "3"
+    risk_desc: "Authorization to start all reports (2.3.3.1.1)"
+
+  - name: DEBUG_CHANGE
+    rule: S_DEVELOP_DEBUG
+    risk_level: "3"
+    risk_desc: "Authorization to debug/replace (2.3.3.1.1)"
+
+  - name: DISP_SPOOL
+    rule: S_SPO_ACT_DISP_ALL
+    risk_level: "3"
+    risk_desc: "Authorization to display other users’ spool request (2.3.3.1.1)"
+
+  - name: ADM_SM59
+    rule: S_RFC_ADM_ADM_ALL
+    risk_level: "3"
+    risk_desc: "Authorization to administer RFC connections (2.3.3.1.1)"
+
+  - name: START_FM_ALL
+    rule: S_DEVELOP_FUGR_EXEC_ALL
+    risk_level: "3"
+    risk_desc: "Authorization to execute all Function Modules (2.3.3.1.1)"
+
+  - name: START_CLASS_ALL
+    rule: S_DEVELOP_CLAS_EXEC_ALL
+    risk_level: "3"
+    risk_desc: "Authorization to execute all Class Methods (2.3.3.1.1)"
+
+  - name: USR_GRP_05_ALL
+    rule: S_USER_GRP_ALL_05
+    risk_level: "3"
+    risk_desc: "Authorization to reset/change user passwords or to lock/unlock users (2.3.3.1.1)"
+
+  - name: CHG_TABLE_AUTH_GRP_ALL
+    rule: S_TABU_DIS_SS_02
+    risk_level: "3"
+    risk_desc: "Authorization to change the authorization groups of tables (2.3.3.1.1)"
+
+  - name: CHG_TABLE_AUTH_GRP_ALL
+    rule: S_TABU_DIS_SS_02
+    risk_level: "3"
+    risk_desc: "Authorization to change the authorization groups of tables (2.3.3.1.1)"
+
+  - name: S_RFC_ALL_COMP
+    rule: S_RFC_ALL
+    risk_level: "3"
+    risk_desc: "Authorization to call all RFCs (2.3.3.1.1)"
+
+  - name: ADM_QUERY
+    rule: S_QUERY_23
+    risk_level: "3"
+    risk_desc: "Authorization to administer queries (2.3.3.1.1)"
+
+  - name: READ_HASH_TABLE
+    rule: (S_TABU_NAM_HASH_TABLE_READ OR S_TABU_DIS_HASH_TABLE_READ) and S_TCODE_READ_TABLE
+    risk_level: "2"
+    risk_desc: "Access to tables USR02, USH02 and USRPWDHISTORY (which store password hashes) (2.3.3.1.1)"
+
+
+
+

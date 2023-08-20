@@ -669,7 +669,7 @@
 			"descr": "2.3.2.2.1",
 			"url": "2467",
 			"risk_level": 3,
-			"group": "Password Policy",
+			"group": "Password policy",
 			"rules_list": [
 				{
 					"min_value": 8
